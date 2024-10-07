@@ -12,7 +12,7 @@ jobs:
       - uses: actions/checkout@v2
       - name: jobs-names
         env:
-          job1_name: ${{ jobs.job1.name }}
+          job1_name: ${{ github.job }}
         run: |
           echo "job1 name is: $job1_name"
   job2:
@@ -21,6 +21,6 @@ jobs:
       - uses: actions/checkout@v2
       - name: jobs-names
         env:
-          job2_name: ${{ jobs.job2.name }}
+          job2_name: ${{ github.job }}
         run: |
           echo "job2 name is: $job2_name"
