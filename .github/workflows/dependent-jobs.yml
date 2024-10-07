@@ -11,6 +11,7 @@ jobs:
     outputs:
       output1: ${{ steps.step1.outputs.FirstName }}
     steps:
+      - uses: actions/checkout@v2
       - name: job2
       - id: step1
         run: echo "FirstName=Abdullah" >> $GITHUB_OUTPUT
