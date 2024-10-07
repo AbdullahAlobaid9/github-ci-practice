@@ -12,6 +12,6 @@ jobs:
       - uses: actions/checkout@v2
       - name: branch-name
         env:
-          BREACNH_NAME: ${{ github.ref }}
+          BRANCH_NAME: ${{ github.ref }}
         run: |
           echo "Branch name is: $BRANCH_NAME"
