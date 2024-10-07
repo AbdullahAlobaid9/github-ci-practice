@@ -13,7 +13,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: job2
-      - id: step1
+        id: step1
         run: echo "FirstName=Abdullah" >> $GITHUB_OUTPUT
   job2:
     runs-on: ubuntu-latest
