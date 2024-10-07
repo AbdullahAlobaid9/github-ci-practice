@@ -11,9 +11,12 @@ jobs:
     outputs:
       output1: ${{ steps.step1.outputs.FirstName }}
     steps:
+      - name: job2
       - id: step1
         run: echo "FirstName=Abdullah" >> $GITHUB_OUTPUT
   job2:
     runs-on: ubuntu-latest
     steps:
-      run: echo ${{ needs.job1.outputs.output1}}
+      - uses: actions/checkout@v2
+      - name: job2
+        run: echo ${{ needs.job1.outputs.output1}}
