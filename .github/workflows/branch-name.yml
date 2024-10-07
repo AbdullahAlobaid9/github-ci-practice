@@ -1,0 +1,17 @@
+name: branch name
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  branch-name:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: branch-name
+      - env:
+        BREACNH_NAME: ${{ github.ref }}
+      run: |
+        echo "Branch name is: $BRANCH_NAME" 
