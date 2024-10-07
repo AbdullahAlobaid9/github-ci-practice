@@ -1,13 +1,26 @@
-# name: 
+name: jobs names
 
-# on:
-#   pull_request:
-#     branches:
-#       - main
+on:
+  push:
+    branches:
+      - main
 
-# jobs:
-#   job-name:
-#     runs-on: ubuntu-latest
-#     steps:
-#       - uses: actions/checkout@v2
-#       - name: python linter!
+jobs:
+  job1:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: jobs-names
+        env:
+          job1_name: ${{ jobs.job1.name }}
+        run: |
+          echo "job1 name is: $job1_name"
+  job2:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: jobs-names
+        env:
+          job2_name: ${{ jobs.job2.name }}
+        run: |
+          echo "job2 name is: $job2_name"
