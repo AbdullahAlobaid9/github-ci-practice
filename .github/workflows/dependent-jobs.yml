@@ -17,6 +17,7 @@ jobs:
         run: echo "FirstName=Abdullah" >> $GITHUB_OUTPUT
   job2:
     runs-on: ubuntu-latest
+    needs: job1
     steps:
       - uses: actions/checkout@v2
       - name: job2
